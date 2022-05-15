@@ -19,7 +19,7 @@ function newPost(post) {
   `;
 }
 
-// добавление карточки через fetch
+// добавление новой карточки через fetch
 postForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   console.log('submit');

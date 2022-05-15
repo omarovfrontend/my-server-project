@@ -6,8 +6,10 @@ const path = require('path');
 require('dotenv').config();
 
 const PORT = process.env.PORT ?? 3000;
+
 const indexRouter = require('./routes/indexRouter');
 const postRouter = require('./routes/postRouter');
+const jokeRouter = require('./routes/jokeRouter');
 
 const app = express();
 hbs.registerPartials(path.join(process.env.PWD, 'views/partials'));
@@ -22,6 +24,7 @@ app.use(express.json()); // чтоб были переданы в body json
 
 app.use('/', indexRouter);
 app.use('/post', postRouter);
+app.use('/joke', jokeRouter);
 
 app.listen(PORT, () => {
   console.log('Server start on', PORT);
